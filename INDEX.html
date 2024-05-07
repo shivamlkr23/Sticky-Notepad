@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width-device-width, initial-scale=1.0">
+<title>Sticky Notepad</title>
+<link rel="stylesheet" href="./STYLE.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="title-wrap">
+            <center>
+           <h1>Sticky Notepad</h1>
+        </center>
+            <textarea pre cols="75" rows="30" id="source" style="color: rgb(13, 66, 238); background-color: rgb(15, 230, 129);"></textarea> </pre>
+</br>
+<button type="button" id="save" style="background-color:rgb(231, 217, 15);color:rgb(226, 15, 15);width:150px;
+height:40px;" title="Save as text file">Save</button>
+<button onclick="window.location.href='https://www.sodapdf.com/txt-to-pdf/';" style="background-color:rgb(231, 217, 15);color:rgb(226, 15, 15);width:150px;
+height:40px;">
+    Make online Pdf
+  </button>
+    <input type="file" name="inputfile" id="inputfile">
+    
+  
+<form action="https://www.google.com/search" method="get">
+    <input type="text" name="q" placeholder="      Google Search" style="background-color:rgb(231, 217, 15);color:rgb(226, 15, 15);width:150px;
+    height:40px;">
+    <input type="submit" value="Search" style="background-color:rgb(231, 217, 15);color:rgb(226, 15, 15);width:150px;
+    height:40px;">
+    <input type="button" value="Clear Text" id="clear" style="background-color:rgb(231, 217, 15);color:rgb(226, 15, 15);width:150px;
+    height:40px;">
+</form>
+
+
+
+
+    <script type="text/javascript">
+        // when document is ready
+        document.getElementById("save").onclick = function() {
+            // when clicked the button
+            var content = document.getElementById('source').value;
+            // a [save as] dialog will be shown
+            window.open("data:application/.txt," + encodeURIComponent(content), "_self");      
+              
+        }
+    </script>
+    <script type="text/javascript"> 
+
+        document.getElementById('inputfile') 
+
+            .addEventListener('change', function() { 
+
+              
+
+            var fr=new FileReader(); 
+
+            fr.onload=function(){ 
+
+                document.getElementById('source') 
+
+                        .textContent=fr.result; 
+
+            } 
+
+              
+
+            fr.readAsText(this.files[0]); 
+
+        }) 
+
+    </script>
+    <script>
+    var input = document.querySelector('#clear');
+    var textarea = document.querySelector('#source');
+    
+    input.addEventListener('click', function () {
+        textarea.value = '';
+    }, false);
+</script>
+
+    
+    <marquee>WELCOME!!! START WRITING YOUR OWN NOTES!!! Designed and Developed By:- Siddhartha Khawas , Subham Chakraborty , Shivendu Shivam , Rahul Kumar , Dipak kumar Yadav !!  Under the Guidance of:- MR.Tapan Kumar Das</marquee>
+    <button onclick="window.location.href='file:///D:/Minor/MINOR%20PROJECT%20GR-5%20STICKY%20NOTEPAD/BCA%20minor%20project%20gr-5/LOGIN.html';" style="background-color:rgb(231, 217, 15);color:rgb(226, 15, 15);width:585px;
+    height:40px;">
+        Logout
+      </button>
+</body>
+
+</html>
+
